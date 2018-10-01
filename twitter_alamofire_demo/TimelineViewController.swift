@@ -47,6 +47,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         tableview.dataSource = self
+        tableview.rowHeight = UITableViewAutomaticDimension
+        tableview.estimatedRowHeight = 50
 
         // Do any additional setup after loading the view.
         fectchTweets()
