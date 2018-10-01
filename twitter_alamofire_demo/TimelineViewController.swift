@@ -8,12 +8,48 @@
 
 import UIKit
 
-class TimelineViewController: UIViewController {
+class TimelineViewController: UIViewController, UITableViewDataSource {
+    
+    var tweets: [Tweet] = []
+    
+    @IBOutlet weak var tableview: UITableView!
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return tweets.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
+        cell.tweetPost = tweets[indexPath.row]
+        
+        return cell
+        
+        
+    }
+    func fectchTweets(){
+        
+        APIManager.shared.getHomeTimeLine { (tweets: [Tweet]?, error: Error?) in
+            if let tweets = tweets {
+                self.tweets = tweets
+                //self.tableView.reloadData()
+                //self.refreshControl.endRefreshing()
+                //self.activityindicator.stopAnimating()
+            }else if let error = error{
+                print(error.localizedDescription)
+                //self.wifiAlarm()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableview.dataSource = self
 
         // Do any additional setup after loading the view.
+        fectchTweets()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,14 +63,5 @@ class TimelineViewController: UIViewController {
     
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

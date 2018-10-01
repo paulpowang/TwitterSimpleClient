@@ -13,6 +13,7 @@ class User{
     var name: String
     var screenName: String
     var id: Int64
+    var profile_image_url: String
     
     
     init(dictionary: [String: Any]) {
@@ -20,6 +21,8 @@ class User{
         screenName = (dictionary["screen_name"] as? String)!
         id = dictionary["id"] as! Int64
         // Initialize any other properties
+        profile_image_url = dictionary["profile_image_url_https"] as! String
+        
     }
     
     static var current: User?
