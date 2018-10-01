@@ -11,6 +11,7 @@ import UIKit
 class TimelineViewController: UIViewController, UITableViewDataSource {
     
     var tweets: [Tweet] = []
+    var refreshControl: UIRefreshControl!
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -33,8 +34,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
         APIManager.shared.getHomeTimeLine { (tweets: [Tweet]?, error: Error?) in
             if let tweets = tweets {
                 self.tweets = tweets
-                //self.tableView.reloadData()
-                //self.refreshControl.endRefreshing()
+                self.tableview.reloadData()
+                self.refreshControl.endRefreshing()
                 //self.activityindicator.stopAnimating()
             }else if let error = error{
                 print(error.localizedDescription)
@@ -49,6 +50,10 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
         tableview.dataSource = self
         tableview.rowHeight = UITableViewAutomaticDimension
         tableview.estimatedRowHeight = 50
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(TimelineViewController.didPullToRefresh(_:)), for: .valueChanged)
+        tableview.insertSubview(refreshControl, at: 0)
 
         // Do any additional setup after loading the view.
         fectchTweets()
@@ -61,6 +66,10 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func logoutButton(_ sender: Any) {
         APIManager.logout()
+    }
+    
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
+        fectchTweets()
     }
     
 
