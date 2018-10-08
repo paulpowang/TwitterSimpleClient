@@ -72,6 +72,16 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
         fectchTweets()
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? UITableViewCell {
+            if let indexPath = tableview.indexPath(for: cell) {
+                let tweet = tweets[indexPath.row]
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.tweet = tweet
+            }
+        }
+    }
 
 
 
