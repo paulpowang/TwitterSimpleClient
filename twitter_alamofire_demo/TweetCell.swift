@@ -67,14 +67,13 @@ class TweetCell: UITableViewCell {
             accountName.text = user?.screenName
             authorName.text = user?.name
             tweetText.text = text
-            //let profile_image_url = URL(String: user?.profile_image_url)!
+    
             
             
-            //profileImage.af_setImage(withURL: profile_image_url)
+       
             profileImage.af_setImage(withURL: (user?.profile_image_url)!)
             
             
-            //profileImage.loadInBackground()
             
             
             

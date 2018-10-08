@@ -8,7 +8,12 @@
 
 import UIKit
 
-class TimelineViewController: UIViewController, UITableViewDataSource {
+class TimelineViewController: UIViewController, UITableViewDataSource, ComposeViewControllerDelegate {
+    
+    func did(post: Tweet) {
+        fectchTweets()
+    }
+    
     
     var tweets: [Tweet] = []
     var refreshControl: UIRefreshControl!
@@ -80,6 +85,10 @@ class TimelineViewController: UIViewController, UITableViewDataSource {
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.tweet = tweet
             }
+        }else if segue.identifier == "composeSegue"{
+            let composeViewController = segue.destination as! ComposeViewController
+            composeViewController.delegate = self
+            
         }
     }
 
