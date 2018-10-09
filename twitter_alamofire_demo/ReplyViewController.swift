@@ -31,6 +31,7 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    /*
     @IBAction func didTapReply(_ sender: Any) {
         var replyTweet: [String: Any] = [:]
         replyTweet["text"] = self.replyText.text! + "@" + (tweet.user?.screenName)!
@@ -46,6 +47,7 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
         }
         navigationController?.popViewController(animated: true)
     }
+ */
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         // TODO: Check the proposed new text character count

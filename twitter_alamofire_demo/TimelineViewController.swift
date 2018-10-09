@@ -11,7 +11,7 @@ import UIKit
 class TimelineViewController: UIViewController, UITableViewDataSource, ComposeViewControllerDelegate {
     
     func did(post: Tweet) {
-        fectchTweets()
+        self.fectchTweets()
     }
     
     
@@ -75,6 +75,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, ComposeVi
     
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
         fectchTweets()
+        self.refreshControl.endRefreshing()
     }
     
     

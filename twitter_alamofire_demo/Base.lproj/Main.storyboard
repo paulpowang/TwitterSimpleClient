@@ -255,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZlF-i2-Ves" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3538.4000000000001" y="36.431784107946029"/>
+            <point key="canvasLocation" x="3210" y="60"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="kUT-c8-Wos">
@@ -407,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r02-Qd-PaI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4407.1999999999998" y="-524.8875562218891"/>
+            <point key="canvasLocation" x="4230" y="-430"/>
         </scene>
         <!--Reply View Controller-->
         <scene sceneID="7cH-YG-eef">
@@ -421,8 +421,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cW-ZP-fM1">
-                                <rect key="frame" x="317" y="72" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cW-ZP-fM1">
+                                <rect key="frame" x="330" y="72" width="29" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -437,11 +437,8 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZA-CF-MQH">
-                                <rect key="frame" x="313" y="229" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="didTapReply:" destination="L83-rZ-mf3" eventType="touchUpInside" id="Elx-1V-U1m"/>
-                                </connections>
+                                <rect key="frame" x="320" y="229" width="39" height="30"/>
+                                <state key="normal" title="Reply"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -462,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nL-sS-ukj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5242.3999999999996" y="-630.13493253373315"/>
+            <point key="canvasLocation" x="3158" y="-743"/>
         </scene>
         <!--New Tweet-->
         <scene sceneID="kru-e6-2x0">
@@ -551,7 +548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOj-Xs-oKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4554" y="335"/>
+            <point key="canvasLocation" x="4230" y="378"/>
         </scene>
         <!--Home-->
         <scene sceneID="WXZ-z8-8LI">
@@ -570,7 +567,35 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHk-jg-Lk3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2520.8000000000002" y="36.431784107946029"/>
+            <point key="canvasLocation" x="2364" y="36"/>
+        </scene>
+        <!--Mention-->
+        <scene sceneID="Bxk-OV-DSt">
+            <objects>
+                <viewController id="5ee-UW-2yT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1l9-dC-8tC"/>
+                        <viewControllerLayoutGuide type="bottom" id="X1e-e8-DMH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ii9-bN-djM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mention" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0W-Po-Fsf">
+                                <rect key="frame" x="107" y="306" width="161" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mention" image="notification-icon" id="aKl-8f-lYU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hA9-Dr-2R1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942" y="818"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ALp-hn-aUl">
@@ -722,6 +747,7 @@
                     <connections>
                         <segue destination="RFK-Vv-pWW" kind="relationship" relationship="viewControllers" id="cln-Ze-hcx"/>
                         <segue destination="VTP-C1-YbK" kind="relationship" relationship="viewControllers" id="hxd-rk-E9R"/>
+                        <segue destination="5ee-UW-2yT" kind="relationship" relationship="viewControllers" id="EQz-tT-Jt4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGd-1J-PjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -735,12 +761,13 @@
         <image name="favor-icon" width="30" height="30"/>
         <image name="home-icon" width="30" height="30"/>
         <image name="message-icon" width="30" height="30"/>
+        <image name="notification-icon" width="30" height="30"/>
         <image name="profile-Icon" width="26" height="26"/>
         <image name="reply-icon" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>
         <image name="selected-icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UQ9-ag-ptf"/>
+        <segue reference="Iin-nj-yC1"/>
     </inferredMetricsTieBreakers>
 </document>
