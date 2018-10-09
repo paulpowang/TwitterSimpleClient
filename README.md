@@ -78,7 +78,7 @@ The following **stretch** features are implemented:
 - [ ] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network.
 - [ ] User can reply to any tweet, and replies should be prefixed with the username and the reply_id should be set when posting the tweet
 - [ ] User sees embedded images in tweet if available
-- [ ] User can switch between timeline, mentions, or profile view through a tab bar
+- [x] User can switch between timeline, mentions, or profile view through a tab bar
 - [ ] Pulling down the profile page should blur and resize the header image.
 
 The following **additional** features are implemented:
@@ -94,12 +94,12 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/paulpowang/TwitterSimpleClient/blob/master/src/TwitterSimpleClient_01.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /><img 
+<img src='https://github.com/paulpowang/TwitterSimpleClient/blob/master/src/Tweet_week6_02.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /><img 
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
-
+Not so easy to accomplish without clear understading the structure, and API manager function.
 
 
 ## Credits
