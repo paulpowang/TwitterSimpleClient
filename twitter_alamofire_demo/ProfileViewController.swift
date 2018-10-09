@@ -10,29 +10,38 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-    //@IBOutlet weak var backgroundImage: UIImageView!
-    //@IBOutlet weak var profilePicture: UIImageView!
-    //@IBOutlet weak var username: UILabel!
-    //@IBOutlet weak var screenname: UILabel!
     
-    //@IBOutlet weak var tweetCount: UILabel!
-    //@IBOutlet weak var followingCount: UILabel!
-    //@IBOutlet weak var followerCount: UILabel!
     
+    
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var screenname: UILabel!
+    
+    @IBOutlet weak var followerCount: UILabel!
+    @IBOutlet weak var followingCount: UILabel!
+    
+    @IBOutlet weak var tweetCount: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        //backgroundImage.af_setImage(withURL: (User.current?.backgroundImageUrl)!)
-        //profilePicture.af_setImage(withURL: (User.current?.profile_image_url)!)
-        //username.text = User.current?.name
-        //screenname.text = "@\(User.current!.screenName)"
-        //screenname.text = "@\(User.current!.screenName)"
-        
-        //tweetCount.text = String(User.current!.tweets!)
-        //followingCount.text = String(User.current!.followingCount!)
-        //followerCount.text = String(User.current!.followerCount!)
+        APIManager.shared.getCurrentAccount{(user:User?, error: Error?) in
+            if let  error = error {
+                print("Error: \(error.localizedDescription)")
+                
+            }else if let user = user {
+                self.username.text = user.name
+                self.screenname.text = "@\(user.screenName)"
+                self.followingCount.text = String(user.followingCount)
+                self.followerCount.text = String(user.followerCount)
+                self.tweetCount.text = String(user.tweetCount)
+                
+                self.profileImage.af_setImage(withURL: user.profile_image_url)
+                
+                
+            }
+        }
         
         
     }

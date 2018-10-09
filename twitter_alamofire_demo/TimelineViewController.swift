@@ -85,10 +85,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, ComposeVi
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.tweet = tweet
             }
-        }else if segue.identifier == "composeSegue"{
-            let composeViewController = segue.destination as! ComposeViewController
-            composeViewController.delegate = self
-            
         }
     }
 

@@ -14,12 +14,12 @@ class User{
     var screenName: String
     var id: Int64
     var profile_image_url: URL
-    var backgroundImageUrl: URL
-    var followingCount: Int?
-    var followerCount: Int?
-    var dict: [String: Any]?
+    var followingCount: Int
+    var followerCount: Int
+    var tweetCount: Int
     
-    private static var _current: User?
+    
+    
     
     
     init(dictionary: [String: Any]) {
@@ -30,40 +30,19 @@ class User{
         //profile_image_url = dictionary["profile_image_url_https"] as! String
         profile_image_url = URL(string: dictionary["profile_image_url_https"] as! String)!
         
-        if !(dictionary["profile_banner_url"] == nil){
-            backgroundImageUrl = URL(string: dictionary["profile_banner_url"] as! String)!
-        }else{
-            backgroundImageUrl = URL(string: "nil")!
-        }
-        
-        followerCount = dictionary["friends_count"] as? Int
-        followerCount = dictionary["followers_count"] as? Int
+        followingCount = dictionary["friends_count"] as! Int
+        followerCount = dictionary["followers_count"] as! Int
+        tweetCount = dictionary["statuses_count"] as! Int
     }
     
     
-    static var current: User? {
+    static var current: User?{
         get{
-            if _current == nil {
-                let defaults = UserDefaults.standard
-                if let userDate = defaults.data(forKey: "currentUserData"){
-                    let dict = try! JSONSerialization.jsonObject(with: userDate, options: []) as! [String: Any]
-                    _current = User(dictionary: dict)
-                }
-            }
-            return _current
+            return nil
         }
-        
         set(user){
-            _current = current
-            let defaults = UserDefaults.standard
-            if let user = user {
-                let data = try! JSONSerialization.data(withJSONObject: user.dict!, options: [])
-                defaults.set(data, forKey: "currentUserData")
-            }else{
-                defaults.removeObject(forKey: "currentUserData")
-            }
+            
         }
-        
     }
     
 }
